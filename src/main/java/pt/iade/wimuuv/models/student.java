@@ -17,10 +17,12 @@ public class student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_name") private String stu_name;
     @Column(name="stu_id") private int stu_id;
+    @Column(name="stu_email") private String stu_email;
+    @Column(name="stu_password") private String stu_password;
     @Column(name="stu_course") private String stu_course;
     @Column(name="stu_bdate") private LocalDate stu_bdate;
     @Column(name="stu_gender") private char stu_gender;
-    @Column(name="stu__course_class") private String stu_course_class;
+    @Column(name="stu_course_class") private String stu_course_class;
     public student() {}
     public LocalDate getBdate() {
         return stu_bdate;
@@ -43,9 +45,14 @@ public class student {
     public int getId() {
         return stu_id;
     }
+    public String getStu_email() {
+        return stu_email;
+    }
     public String getName() {
         return stu_name;
     }
+
+
     
     
 }   
