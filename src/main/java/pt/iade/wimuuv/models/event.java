@@ -43,10 +43,10 @@ public class event {
     public String getEvent_description() {
         return event_description;
     }
-    public int getEvent_duration() {
+    public double getEvent_duration() {
         return event_duration;
     }
-    public int getEvent_endtime() {
+    public LocalDate getEvent_endtime() {
         return event_endtime;
     }
     public int getEvent_id() {
@@ -70,7 +70,7 @@ public class event {
     public int getEvent_spot() {
         return event_spot;
     }
-    public int getEvent_starttime() {
+    public LocalDate getEvent_starttime() {
         return event_starttime;
     }
     public int getEvent_state() {
