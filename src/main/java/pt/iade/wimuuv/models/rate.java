@@ -15,6 +15,7 @@ public class rate {
     @Column(name="rate_event") private int rate_event;
     @Column(name="rate_spot") private int rate_spot;
     @Column(name="rate_org") private int rate_org;
+    @Column(name="rate_id") private int rate_id;
     public rate(){}
     public int getRate_event() {
         return rate_event;
@@ -25,7 +26,9 @@ public class rate {
     public int getRate_spot() {
         return rate_spot;
     }
-    
+    public int getRate_id() {
+        return rate_id;
+    }
     
 
 }
