@@ -12,6 +12,7 @@ import pt.iade.wimuuv.models.exceptions.NotFoundException;
 import pt.iade.wimuuv.models.exceptions.Response;
 import pt.iade.wimuuv.models.repositories.PhotoRepository;
 
+
 @RestController
 @RequestMapping(path = "/api/photo")
 public class PhotoController {

@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+src/main/java/pt/iade/wimuuv/models/repositories/photoRepository.java
+src/main/java/pt/iade/wimuuv/models/repositories/photoRepository.java
