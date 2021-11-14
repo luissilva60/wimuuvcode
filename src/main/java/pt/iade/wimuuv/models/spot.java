@@ -15,12 +15,12 @@ public class spot {
     @Column(name="spot_id") private int spot_id;
     @Column(name="spot_name") private String spot_name;
     @Column(name="spot_address") private String spot_address;
-    @Column(name="spot_description") private int spot_description;
+    @Column(name="spot_description") private String spot_description;
     @Column(name="spot_photo") private int spot_photo;
     public String getSpot_address() {
         return spot_address;
     }
-    public int getSpot_description() {
+    public String getSpot_description() {
         return spot_description;
     }
     public int getSpot_id() {

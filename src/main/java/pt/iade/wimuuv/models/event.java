@@ -1,7 +1,7 @@
 package pt.iade.wimuuv.models;
 
 
-import java.sql.Date;
+
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import net.bytebuddy.asm.Advice.Local;
+
 
 @Entity
 @Table(name="event")
@@ -26,13 +26,13 @@ public class event {
     @Column(name="event_starttime") private LocalDate event_starttime;
     @Column(name="event_endtime") private LocalDate event_endtime;
     @Column(name="event_duration") private double event_duration;
-    @Column(name="event_org") private int event_org;
-    @Column(name="event_spot ") private int event_spot ;
+    @Column(name="event_org") private String event_org;
+    @Column(name="event_spot ") private String event_spot ;
     @Column(name="event_capacity") private int event_capacity;
     @Column(name="event_photos") private int event_photos;
-    @Column(name="event_state ") private int event_state ;
+    @Column(name="event_state ") private String event_state ;
     @Column(name="event_rating ") private int event_rating ;
-    @Column(name="event_qrcodecheck ") private int event_qrcodecheck ;
+    @Column(name="event_qrcodecheck ") private boolean event_qrcodecheck ;
 
     public int getEvent_capacity() {
         return event_capacity;
@@ -55,25 +55,25 @@ public class event {
     public String getEvent_name() {
         return event_name;
     }
-    public int getEvent_org() {
+    public String getEvent_org() {
         return event_org;
     }
     public int getEvent_photos() {
         return event_photos;
     }
-    public int getEvent_qrcodecheck() {
+    public boolean getEvent_qrcodecheck() {
         return event_qrcodecheck;
     }
     public int getEvent_rating() {
         return event_rating;
     }
-    public int getEvent_spot() {
+    public String getEvent_spot() {
         return event_spot;
     }
     public LocalDate getEvent_starttime() {
         return event_starttime;
     }
-    public int getEvent_state() {
+    public String getEvent_state() {
         return event_state;
     }
     public String getEvent_type() {
