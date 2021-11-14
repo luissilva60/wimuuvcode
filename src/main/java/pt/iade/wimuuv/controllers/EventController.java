@@ -21,7 +21,7 @@ public class EventController {
     private EventRepository eventRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<event> getEvents()
-     {
+    {
         logger.info("Sending all events!");
         return eventRepository.findAll();
     }

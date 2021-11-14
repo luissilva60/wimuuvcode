@@ -22,7 +22,7 @@ public class SpotController {
     private SpotRepository spotRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<spot> getRates()
-     {
+    {
         logger.info("Sending all spots!");
         return spotRepository.findAll();
     }

@@ -21,7 +21,7 @@ public class OrgsController {
     private OrgsRepository orgsRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<orgs> getOrgs()
-     {
+    {
         logger.info("Sending all orgs!");
         return orgsRepository.findAll();
     }

@@ -20,7 +20,7 @@ public class PhotoController {
     private PhotoRepository photoRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<photo> getPhotos()
-     {
+    {
         logger.info("Sending all photos!");
         return photoRepository.findAll();
     }

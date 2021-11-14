@@ -21,7 +21,7 @@ public class RateController {
     private RateRepository rateRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<rate> getrates()
-     {
+    {
         logger.info("Sending all rates!");
         return rateRepository.findAll();
     }
