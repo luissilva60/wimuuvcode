@@ -14,7 +14,7 @@ import pt.iade.wimuuv.models.repositories.EventRepository;
 
 
 @RestController
-@RequestMapping(path = "/api/events")
+@RequestMapping(path = "/api/event")
 public class EventController {
     private final Logger logger = LoggerFactory.getLogger(EventRepository.class);
     @Autowired
@@ -25,10 +25,11 @@ public class EventController {
         logger.info("Sending all events!");
         return eventRepository.findAll();
     }
+    
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public event getEvent(@PathVariable int id_event) {
         logger.info("Sending event with id " + id_event);
-        Optional<event> event1 =   EventRepository.findById(id_event);
+        Optional<event> event1 =   eventRepository.findById(id_event);
         if (!event1.isPresent()) throw
                 new NotFoundException("" + id_event, "Event", "id");
         else
@@ -37,7 +38,7 @@ public class EventController {
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public event saveEvent(@RequestBody event event) {
-        event savedEvent = EventRepository.save(event);
+        event savedEvent = eventRepository.save(event);
         logger.info("Saving event with id " + savedEvent.getEvent_id());
         return savedEvent;
     }
@@ -45,11 +46,11 @@ public class EventController {
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteEvent(@PathVariable int id_event) {
         logger.info("Deleting event with id " + id_event);
-        Optional<event> event1 = EventRepository.findById(id_event);
+        Optional<event> event1 = eventRepository.findById(id_event);
         if (!event1.isPresent()) throw
                 new NotFoundException("" + id_event, "event", "id");
         else
-            EventRepository.deleteById(id_event);
+            eventRepository.deleteById(id_event);
             return new Response("Deleted event with id " + id_event, null);
     }
 
