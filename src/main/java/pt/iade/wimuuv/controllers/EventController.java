@@ -1,13 +1,15 @@
 package pt.iade.wimuuv.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import java.util.Optional;
 
-import antlr.debug.Event;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pt.iade.wimuuv.models.event;
+import pt.iade.wimuuv.models.exceptions.NotFoundException;
+import pt.iade.wimuuv.models.exceptions.Response;
 import pt.iade.wimuuv.models.repositories.EventRepository;
 
 
@@ -23,4 +25,32 @@ public class EventController {
         logger.info("Sending all events!");
         return eventRepository.findAll();
     }
+    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public event getEvent(@PathVariable int id_event) {
+        logger.info("Sending event with id " + id_event);
+        Optional<event> event1 =   EventRepository.findById(id_event);
+        if (!event1.isPresent()) throw
+                new NotFoundException("" + id_event, "Event", "id");
+        else
+            return event1.get();
+    }
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public event saveEvent(@RequestBody event event) {
+        event savedEvent = EventRepository.save(event);
+        logger.info("Saving event with id " + savedEvent.getEvent_id());
+        return savedEvent;
+    }
+
+    @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response deleteEvent(@PathVariable int id_event) {
+        logger.info("Deleting event with id " + id_event);
+        Optional<event> event1 = EventRepository.findById(id_event);
+        if (!event1.isPresent()) throw
+                new NotFoundException("" + id_event, "event", "id");
+        else
+            EventRepository.deleteById(id_event);
+            return new Response("Deleted event with id " + id_event, null);
+    }
+
 }

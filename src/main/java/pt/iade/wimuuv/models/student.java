@@ -23,6 +23,7 @@ public class student {
     @Column(name="stu_bdate") private LocalDate stu_bdate;
     @Column(name="stu_gender") private char stu_gender;
     @Column(name="stu_course_class") private String stu_course_class;
+    @Column(name="stu_distance") private int stu_distance;
     public student() {}
     public LocalDate getBdate() {
         return stu_bdate;
@@ -50,6 +51,9 @@ public class student {
     }
     public String getName() {
         return stu_name;
+    }
+    public int getStu_distance() {
+        return stu_distance;
     }
 
 

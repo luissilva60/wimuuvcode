@@ -2,6 +2,7 @@ package pt.iade.wimuuv.models;
 
 
 
+import java.sql.Time;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -23,8 +24,8 @@ public class event {
     @Column(name="event_description") private String event_description;
     @Column(name="event_type") private String event_type;
     @Column(name="event_date") private LocalDate event_date;
-    @Column(name="event_starttime") private LocalDate event_starttime;
-    @Column(name="event_endtime") private LocalDate event_endtime;
+    @Column(name="event_starttime") private Time event_starttime;
+    @Column(name="event_endtime") private Time event_endtime;
     @Column(name="event_duration") private double event_duration;
     @Column(name="event_org") private String event_org;
     @Column(name="event_spot ") private String event_spot ;
@@ -46,7 +47,7 @@ public class event {
     public double getEvent_duration() {
         return event_duration;
     }
-    public LocalDate getEvent_endtime() {
+    public Time getEvent_endtime() {
         return event_endtime;
     }
     public int getEvent_id() {
@@ -70,7 +71,7 @@ public class event {
     public String getEvent_spot() {
         return event_spot;
     }
-    public LocalDate getEvent_starttime() {
+    public Time getEvent_starttime() {
         return event_starttime;
     }
     public String getEvent_state() {
