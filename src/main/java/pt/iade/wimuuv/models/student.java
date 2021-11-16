@@ -19,11 +19,10 @@ public class student {
     @Column(name="stu_id") private int stu_id;
     @Column(name="stu_email") private String stu_email;
     @Column(name="stu_password") private String stu_password;
-    @Column(name="stu_course") private String stu_course;
     @Column(name="stu_bdate") private LocalDate stu_bdate;
     @Column(name="stu_gender") private char stu_gender;
-    @Column(name="stu_course_class") private String stu_course_class;
     @Column(name="stu_distance") private int stu_distance;
+    @Column(name="stu_crse_id") private int stu_crse_id;
     public student() {}
     public LocalDate getBdate() {
         return stu_bdate;
@@ -32,13 +31,6 @@ public class student {
     public int getCurrentAge() {
         LocalDate now = LocalDate.now();
         return Period.between(stu_bdate, now).getYears();
-        }
-        
-    public String getCourse() {
-        return stu_course;
-    }
-    public String getCourse_class() {
-        return stu_course_class;
     }
     public char getGender() {
         return stu_gender;
@@ -55,7 +47,9 @@ public class student {
     public int getStu_distance() {
         return stu_distance;
     }
-
+    public int getStu_crse_id() {
+        return stu_crse_id;
+    }
 
     
     

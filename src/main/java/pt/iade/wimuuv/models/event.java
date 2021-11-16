@@ -22,18 +22,18 @@ public class event {
     @Column(name="event_id") private int event_id;
     @Column(name="event_name") private String event_name;
     @Column(name="event_description") private String event_description;
-    @Column(name="event_type") private String event_type;
+    @Column(name="event_type_id") private String event_type_id;
     @Column(name="event_date") private LocalDate event_date;
     @Column(name="event_starttime") private Time event_starttime;
     @Column(name="event_endtime") private Time event_endtime;
     @Column(name="event_duration") private double event_duration;
-    @Column(name="event_org") private String event_org;
-    @Column(name="event_spot ") private String event_spot ;
+    @Column(name="event_org_id") private String event_org_id;
+    @Column(name="event_spot_id") private String event_spot_id ;
     @Column(name="event_capacity") private int event_capacity;
     @Column(name="event_photos") private int event_photos;
-    @Column(name="event_state ") private String event_state ;
+    @Column(name="event_state_id ") private String event_state_id ;
     @Column(name="event_rating ") private int event_rating ;
-    @Column(name="event_qrcodecheck ") private boolean event_qrcodecheck ;
+    
 
     public int getEvent_capacity() {
         return event_capacity;
@@ -56,29 +56,26 @@ public class event {
     public String getEvent_name() {
         return event_name;
     }
-    public String getEvent_org() {
-        return event_org;
+    public String getEvent_org_id() {
+        return event_org_id;
     }
     public int getEvent_photos() {
         return event_photos;
     }
-    public boolean getEvent_qrcodecheck() {
-        return event_qrcodecheck;
-    }
     public int getEvent_rating() {
         return event_rating;
     }
-    public String getEvent_spot() {
-        return event_spot;
+    public String getEvent_spot_id() {
+        return event_spot_id;
     }
     public Time getEvent_starttime() {
         return event_starttime;
     }
-    public String getEvent_state() {
-        return event_state;
+    public String getEvent_state_id() {
+        return event_state_id;
     }
-    public String getEvent_type() {
-        return event_type;
+    public String getEvent_type_id() {
+        return event_type_id;
     }
     
     
