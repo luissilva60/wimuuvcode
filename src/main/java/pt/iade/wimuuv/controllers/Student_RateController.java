@@ -1,0 +1,59 @@
+package pt.iade.wimuuv.controllers;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import java.util.Optional;
+
+import pt.iade.wimuuv.models.student_rate;
+import pt.iade.wimuuv.models.exceptions.NotFoundException;
+import pt.iade.wimuuv.models.exceptions.Response;
+import pt.iade.wimuuv.models.repositories.Student_RateRepository;
+
+
+@RestController
+@RequestMapping(path = "/api/student_rate")
+public class Student_RateController {
+    private final Logger logger = LoggerFactory.getLogger(Student_RateRepository.class);
+    @Autowired
+    private Student_RateRepository student_rateRepository;
+    @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<student_rate> getstudent_rate()
+    {
+        logger.info("Sending all student_rate!");
+        return student_rateRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public student_rate getOrg(@PathVariable int id_student_rate) {
+        logger.info("Sending org with id " + id_student_rate);
+        Optional<student_rate> student_rate1 =   student_rateRepository.findById(id_student_rate);
+        if (!student_rate1.isPresent()) throw
+                new NotFoundException("" + id_student_rate, "student_rate", "id");
+        else
+            return student_rate1.get();
+    }
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public student_rate savestudent_rate(@RequestBody student_rate org) {
+        student_rate savedstudent_rate = student_rateRepository.save(org);
+        logger.info("Saving org with id " + savedstudent_rate.getStu_rate_id());
+        return savedstudent_rate;
+    }
+
+    @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response deletestudent_rate(@PathVariable int id_student_rate) {
+        logger.info("Deleting Org with id " + id_student_rate);
+        Optional<student_rate> student_rate1 = student_rateRepository.findById(id_student_rate);
+        if (!student_rate1.isPresent()) throw
+                new NotFoundException("" + id_student_rate, "student_rate", "id");
+        else
+            student_rateRepository.deleteById(id_student_rate);
+            return new Response("Deleted org with id " + id_student_rate, null);
+    }
+
+
+
+}

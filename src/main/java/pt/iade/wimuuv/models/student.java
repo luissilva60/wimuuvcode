@@ -22,6 +22,7 @@ public class student {
     @Column(name="stu_bdate") private LocalDate stu_bdate;
     @Column(name="stu_gender") private char stu_gender;
     @Column(name="stu_crse_id") private int stu_crse_id;
+    @Column(name="stu_photo_id") private int stu_photo_id;
     public student() {}
     public LocalDate getBdate() {
         return stu_bdate;
@@ -45,6 +46,9 @@ public class student {
     }
     public int getStu_crse_id() {
         return stu_crse_id;
+    }
+    public int getStu_photo_id() {
+        return stu_photo_id;
     }
 
     

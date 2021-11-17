@@ -7,20 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="rate")
-
-public class rate {
+@Table(name="student_event_photo")
+public class student_event_photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="rate_event") private int rate_event;
-    @Column(name="rate_id") private int rate_id;
-    
-    public int getRate_event() {
-        return rate_event;
-    }
-    public int getRate_id() {
-        return rate_id;
-    }
-    
+    @Column(name="ev_photo_id") private int ev_photo_id;
+    @Column(name="stu_photo_id") private String stu_photo_id;
 
+    public int getEv_photo_id() {
+        return ev_photo_id;
+    }
+    public String getStu_photo_id() {
+        return stu_photo_id;
+    }
+    
 }
