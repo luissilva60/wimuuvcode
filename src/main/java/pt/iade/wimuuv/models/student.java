@@ -21,7 +21,6 @@ public class student {
     @Column(name="stu_password") private String stu_password;
     @Column(name="stu_bdate") private LocalDate stu_bdate;
     @Column(name="stu_gender") private char stu_gender;
-    @Column(name="stu_distance") private int stu_distance;
     @Column(name="stu_crse_id") private int stu_crse_id;
     public student() {}
     public LocalDate getBdate() {
@@ -43,9 +42,6 @@ public class student {
     }
     public String getName() {
         return stu_name;
-    }
-    public int getStu_distance() {
-        return stu_distance;
     }
     public int getStu_crse_id() {
         return stu_crse_id;
