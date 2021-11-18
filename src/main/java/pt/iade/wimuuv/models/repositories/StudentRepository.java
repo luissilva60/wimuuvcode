@@ -13,8 +13,8 @@ import pt.iade.wimuuv.models.student;
 
 public interface StudentRepository extends CrudRepository<student, Integer>{
     @Modifying @Transactional
-    @Query(value="insert into student (stu_name,stu_email, stu_photo_id,stu_password,"+
-        "stu_bdate,stu_gender,stu_crse_id)"+
+    @Query(value="insert into student (stu_name, stu_email, stu_photo_id, stu_password,"+
+        "stu_bdate, stu_gender, stu_crse_id)"+
         "values(:#{#student.name}, :#{#student.email}, :#{#student.photoId}, "+
         ":#{#student.password}, :#{#student.bdate}"+
         ", :#{#student.gender}, :#{#student.crseId} )", nativeQuery=true)

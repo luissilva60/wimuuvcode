@@ -44,7 +44,7 @@ public class StudentController {
         logger.info("Saving student with id " + savedStudent.getId());
         return savedStudent;
     }*/
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/student/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody student studentId) {
         logger.info("Regestring student with id " + studentId.getId() +
         " of course with id "+studentId.getCrseId());
