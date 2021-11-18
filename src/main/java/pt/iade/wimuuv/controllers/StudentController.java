@@ -19,7 +19,7 @@ public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<student> getRates()
+    public Iterable<student> getstudents()
     {
         logger.info("Sending all students!");
         return studentRepository.findAll();
