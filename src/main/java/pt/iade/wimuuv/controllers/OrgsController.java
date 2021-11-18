@@ -39,7 +39,7 @@ public class OrgsController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public orgs saveOrgs(@RequestBody orgs org) {
         orgs savedOrgs = orgsRepository.save(org);
-        logger.info("Saving org with id " + savedOrgs.getOrg_id());
+        logger.info("Saving org with id " + savedOrgs.getId());
         return savedOrgs;
     }
 

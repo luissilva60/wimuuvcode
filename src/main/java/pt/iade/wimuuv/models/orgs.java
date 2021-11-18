@@ -12,17 +12,17 @@ public class orgs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="org_id") private int id;
-    @Column(name="org_name") private String org_name;
-    @Column(name="org_initials") private String org_initials;
+    @Column(name="org_name") private String name;
+    @Column(name="org_initials") private String initials;
     public orgs(){}
-    public int getOrg_id() {
+    public int getId() {
         return id;
     }
-    public String getOrg_initials() {
-        return org_initials;
+    public String getInitials() {
+        return initials;
     }
-    public String getOrg_name() {
-        return org_name;
+    public String getName() {
+        return name;
     }
     
     

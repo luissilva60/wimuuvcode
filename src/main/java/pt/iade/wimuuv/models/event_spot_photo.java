@@ -15,16 +15,16 @@ public class event_spot_photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="event_spotph_id") private int id;
-    @Column(name="event_ph_id") private int event_ph_id;
-    @Column(name="event_sp_id") private int event_sp_id;
+    @Column(name="event_ph_id") private int phId;
+    @Column(name="event_sp_id") private int spId;
 
-    public int getEvent_ph_id() {
-        return event_ph_id;
+    public int getPhId() {
+        return phId;
     }
-    public int getEvent_sp_id() {
-        return event_sp_id;
+    public int getSpId() {
+        return spId;
     }
-    public int getEvent_spotph_id() {
+    public int getId() {
         return id;
     }
 

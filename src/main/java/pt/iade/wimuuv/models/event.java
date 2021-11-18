@@ -20,62 +20,62 @@ public class event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="event_id") private int id;
-    @Column(name="event_name") private String event_name;
-    @Column(name="event_description") private String event_description;
-    @Column(name="event_type_id") private int event_type_id;
-    @Column(name="event_date") private LocalDate event_date;
-    @Column(name="event_starttime") private Time event_starttime;
-    @Column(name="event_endtime") private Time event_endtime;
-    @Column(name="event_duration") private Time event_duration;
-    @Column(name="event_org_id") private int event_org_id;
-    @Column(name="event_spot_id") private int event_spot_id ;
-    @Column(name="event_capacity") private int event_capacity;
-    @Column(name="event_photos_id") private int event_photos_id;
-    @Column(name="event_state_id ") private String event_state_id ;
-    @Column(name="event_rate_id ") private int event_rate_id ;
+    @Column(name="event_name") private String name;
+    @Column(name="event_description") private String description;
+    @Column(name="event_type_id") private int typeId;
+    @Column(name="event_date") private LocalDate date;
+    @Column(name="event_starttime") private Time starttime;
+    @Column(name="event_endtime") private Time endtime;
+    @Column(name="event_duration") private Time duration;
+    @Column(name="event_org_id") private int orgId;
+    @Column(name="event_spot_id") private int spotId ;
+    @Column(name="event_capacity") private int capacity;
+    @Column(name="event_photos_id") private int photosId;
+    @Column(name="event_state_id ") private String stateId ;
+    @Column(name="event_rate_id ") private int rateId ;
     
 
-    public int getEvent_capacity() {
-        return event_capacity;
+    public int getCapacity() {
+        return capacity;
     }
-    public LocalDate getEvent_date() {
-        return event_date;
+    public LocalDate getDate() {
+        return date;
     }
-    public String getEvent_description() {
-        return event_description;
+    public String getDescription() {
+        return description;
     }
-    public Time getEvent_duration() {
-        return event_duration;
+    public Time getDuration() {
+        return duration;
     }
-    public Time getEvent_endtime() {
-        return event_endtime;
+    public Time getEndtime() {
+        return endtime;
     }
-    public int getEvent_id() {
+    public int getId() {
         return id;
     }
     public String getEvent_name() {
-        return event_name;
+        return name;
     }
-    public int getEvent_org_id() {
-        return event_org_id;
+    public int getOrgId() {
+        return orgId;
     }
-    public int getEvent_photos() {
-        return event_photos_id;
+    public int getPhotos() {
+        return photosId;
     }
-    public int getEvent_rating() {
-        return event_rate_id;
+    public int getRating() {
+        return rateId;
     }
-    public int getEvent_spot_id() {
-        return event_spot_id;
+    public int getSpotId() {
+        return spotId;
     }
-    public Time getEvent_starttime() {
-        return event_starttime;
+    public Time getStarttime() {
+        return starttime;
     }
-    public String getEvent_state_id() {
-        return event_state_id;
+    public String getStateId() {
+        return stateId;
     }
-    public int getEvent_type_id() {
-        return event_type_id;
+    public int getTypeId() {
+        return typeId;
     }
     
     

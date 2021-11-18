@@ -39,7 +39,7 @@ public class EventController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public event saveEvent(@RequestBody event event) {
         event savedEvent = eventRepository.save(event);
-        logger.info("Saving event with id " + savedEvent.getEvent_id());
+        logger.info("Saving event with id " + savedEvent.getId());
         return savedEvent;
     }
 

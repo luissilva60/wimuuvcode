@@ -38,7 +38,7 @@ public class Event_Spot_PhotoController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public event_spot_photo saveevent_spot_photo(@RequestBody event_spot_photo org) {
         event_spot_photo savedevent_spot_photo = event_spot_photoRepository.save(org);
-        logger.info("Saving org with id " + savedevent_spot_photo.getEvent_spotph_id());
+        logger.info("Saving org with id " + savedevent_spot_photo.getId());
         return savedevent_spot_photo;
     }
 
