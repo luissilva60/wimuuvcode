@@ -24,7 +24,7 @@ public class student {
     @Column(name="stu_crse_id") private int stu_crse_id;
     @Column(name="stu_photo_id") private int stu_photo_id;
     public student() {}
-    public LocalDate getBdate() {
+    public LocalDate getStu_Bdate() {
         return stu_bdate;
     }
 
@@ -32,7 +32,7 @@ public class student {
         LocalDate now = LocalDate.now();
         return Period.between(stu_bdate, now).getYears();
     }
-    public char getGender() {
+    public char getStu_Gender() {
         return stu_gender;
     }
     public int getId() {
@@ -41,7 +41,7 @@ public class student {
     public String getStu_email() {
         return stu_email;
     }
-    public String getName() {
+    public String getStu_Name() {
         return stu_name;
     }
     public int getStu_crse_id() {
