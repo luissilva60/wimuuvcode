@@ -3,9 +3,12 @@ package pt.iade.wimuuv.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
+
+
 
 import pt.iade.wimuuv.models.student;
 import pt.iade.wimuuv.models.exceptions.NotFoundException;
@@ -35,12 +38,19 @@ public class StudentController {
             return _student.get();
     }
 
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    /*@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public student saveStudent(@RequestBody student student) {
         student savedStudent = studentRepository.save(student);
         logger.info("Saving student with id " + savedStudent.getId());
         return savedStudent;
-    }
+    }*/
+    @PostMapping(path = "")
+    public Response saveStudent(@RequestBody student studentId) {
+        logger.info("Regestring student with id " + studentId.getId() +
+        " of course with id "+studentId.getStu_crse_id());
+        Integer inserted = studentRepository.registerStudent(studentId);
+    return new Response(inserted+" registration created",studentId);
+}
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteStudent(@PathVariable int id) {
         logger.info("Deleting student with id " + id);
