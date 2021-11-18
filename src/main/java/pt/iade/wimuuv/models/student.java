@@ -44,10 +44,10 @@ public class student {
     public String getName() {
         return name;
     }
-    public int getcrseId() {
+    public int getCrseId() {
         return crseId;
     }
-    public int getphotoId() {
+    public int getPhotoId() {
         return photoId;
     }
 
