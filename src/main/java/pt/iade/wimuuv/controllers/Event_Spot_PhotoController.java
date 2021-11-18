@@ -26,11 +26,11 @@ public class Event_Spot_PhotoController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public event_spot_photo getOrg(@PathVariable int id_event_spot_photo) {
-        logger.info("Sending org with id " + id_event_spot_photo);
-        Optional<event_spot_photo> event_spot_photo1 =   event_spot_photoRepository.findById(id_event_spot_photo);
+    public event_spot_photo getOrg(@PathVariable int id) {
+        logger.info("Sending org with id " + id);
+        Optional<event_spot_photo> event_spot_photo1 =   event_spot_photoRepository.findById(id);
         if (!event_spot_photo1.isPresent()) throw
-                new NotFoundException("" + id_event_spot_photo, "event_spot_photo", "id");
+                new NotFoundException("" + id, "event_spot_photo", "id");
         else
             return event_spot_photo1.get();
     }
@@ -43,13 +43,13 @@ public class Event_Spot_PhotoController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteevent_spot_photo(@PathVariable int id_event_spot_photo) {
-        logger.info("Deleting Org with id " + id_event_spot_photo);
-        Optional<event_spot_photo> event_spot_photo1 = event_spot_photoRepository.findById(id_event_spot_photo);
+    public Response deleteevent_spot_photo(@PathVariable int id) {
+        logger.info("Deleting Org with id " + id);
+        Optional<event_spot_photo> event_spot_photo1 = event_spot_photoRepository.findById(id);
         if (!event_spot_photo1.isPresent()) throw
-                new NotFoundException("" + id_event_spot_photo, "event_spot_photo", "id");
+                new NotFoundException("" + id, "event_spot_photo", "id");
         else
-            event_spot_photoRepository.deleteById(id_event_spot_photo);
-            return new Response("Deleted org with id " + id_event_spot_photo, null);
+            event_spot_photoRepository.deleteById(id);
+            return new Response("Deleted org with id " + id, null);
     }
 }

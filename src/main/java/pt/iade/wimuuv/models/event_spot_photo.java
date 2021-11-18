@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class event_spot_photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="event_spotph_id") private int event_spotph_id;
+    @Column(name="event_spotph_id") private int id;
     @Column(name="event_ph_id") private int event_ph_id;
     @Column(name="event_sp_id") private int event_sp_id;
 
@@ -25,7 +25,7 @@ public class event_spot_photo {
         return event_sp_id;
     }
     public int getEvent_spotph_id() {
-        return event_spotph_id;
+        return id;
     }
 
 }

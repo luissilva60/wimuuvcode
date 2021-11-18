@@ -27,11 +27,11 @@ public class PhotoController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public photo getPhoto(@PathVariable int id_photo) {
-        logger.info("Sending photo with id " + id_photo);
-        Optional<photo> photo1 =   photoRepository.findById(id_photo);
+    public photo getPhoto(@PathVariable int id) {
+        logger.info("Sending photo with id " + id);
+        Optional<photo> photo1 =   photoRepository.findById(id);
         if (!photo1.isPresent()) throw
-                new NotFoundException("" + id_photo, "Photo", "id");
+                new NotFoundException("" + id, "Photo", "id");
         else
             return photo1.get();
     }
@@ -44,13 +44,13 @@ public class PhotoController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deletePhoto(@PathVariable int id_photo) {
-        logger.info("Deleting photo with id " + id_photo);
-        Optional<photo> photo1 = photoRepository.findById(id_photo);
+    public Response deletePhoto(@PathVariable int id) {
+        logger.info("Deleting photo with id " + id);
+        Optional<photo> photo1 = photoRepository.findById(id);
         if (!photo1.isPresent()) throw
-                new NotFoundException("" + id_photo, "photo", "id");
+                new NotFoundException("" + id, "photo", "id");
         else
-            photoRepository.deleteById(id_photo);
-            return new Response("Deleted photo with id " + id_photo, null);
+            photoRepository.deleteById(id);
+            return new Response("Deleted photo with id " + id, null);
     }
 }

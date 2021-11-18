@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class student_rate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="stu_rate_id") private int stu_rate_id;
+    @Column(name="stu_rate_id") private int id;
     @Column(name="stu_rate_ev") private int stu_rate_ev;
     @Column(name="stu_rid") private int stu_rid;
     @Column(name="ev_rid") private int ev_rid;
@@ -24,7 +24,7 @@ public class student_rate {
         return stu_rate_ev;
     }
     public int getStu_rate_id() {
-        return stu_rate_id;
+        return id;
     }
     public int getStu_rid() {
         return stu_rid;

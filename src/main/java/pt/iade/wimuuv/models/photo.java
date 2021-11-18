@@ -12,11 +12,11 @@ import javax.persistence.Table;
 public class photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="photo_id") private int photo_id;
+    @Column(name="photo_id") private int id;
     @Column(name="photo_path") private String photo_path;
     @Column(name="photo_name") private String photo_name;
     public int getPhoto_id() {
-        return photo_id;
+        return id;
     }
     public String getPhoto_name() {
         return photo_name;

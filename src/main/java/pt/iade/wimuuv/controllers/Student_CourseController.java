@@ -26,11 +26,11 @@ public class Student_CourseController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public student_course getStudent_course(@PathVariable int id_student_course) {
-        logger.info("Sending student_course with id " + id_student_course);
-        Optional<student_course> student_course1 =   student_courseRepository.findById(id_student_course);
+    public student_course getStudent_course(@PathVariable int id) {
+        logger.info("Sending student_course with id " + id);
+        Optional<student_course> student_course1 =   student_courseRepository.findById(id);
         if (!student_course1.isPresent()) throw
-                new NotFoundException("" + id_student_course, "Student_course", "id");
+                new NotFoundException("" + id, "Student_course", "id");
         else
             return student_course1.get();
     }
@@ -42,13 +42,13 @@ public class Student_CourseController {
         return savedStudent_course;
     }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteStudent_course(@PathVariable int id_student_course) {
-        logger.info("Deleting student_course with id " + id_student_course);
-        Optional<student_course> student_course1 = student_courseRepository.findById(id_student_course);
+    public Response deleteStudent_course(@PathVariable int id) {
+        logger.info("Deleting student_course with id " + id);
+        Optional<student_course> student_course1 = student_courseRepository.findById(id);
         if (!student_course1.isPresent()) throw
-                new NotFoundException("" + id_student_course, "student_course", "id");
+                new NotFoundException("" + id, "student_course", "id");
         else
-            student_courseRepository.deleteById(id_student_course);
-            return new Response("Deleted student_course with id " + id_student_course, null);
+            student_courseRepository.deleteById(id);
+            return new Response("Deleted student_course with id " + id, null);
     }
 }

@@ -28,11 +28,11 @@ public class Student_Event_PhotoController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public student_event_photo getstudent_event_photo(@PathVariable int id_student_event_photo) {
-        logger.info("Sending student_event_photo with id " + id_student_event_photo);
-        Optional<student_event_photo> student_event_photo1 =   student_event_photoRepository.findById(id_student_event_photo);
+    public student_event_photo getstudent_event_photo(@PathVariable int id) {
+        logger.info("Sending student_event_photo with id " + id);
+        Optional<student_event_photo> student_event_photo1 =   student_event_photoRepository.findById(id);
         if (!student_event_photo1.isPresent()) throw
-                new NotFoundException("" + id_student_event_photo, "student_event_photo", "id");
+                new NotFoundException("" + id, "student_event_photo", "id");
         else
             return student_event_photo1.get();
     }
@@ -45,14 +45,14 @@ public class Student_Event_PhotoController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deletestudent_event_photo(@PathVariable int id_student_event_photo) {
-        logger.info("Deleting student_event_photo with id " + id_student_event_photo);
-        Optional<student_event_photo> student_event_photo1 = student_event_photoRepository.findById(id_student_event_photo);
+    public Response deletestudent_event_photo(@PathVariable int id) {
+        logger.info("Deleting student_event_photo with id " + id);
+        Optional<student_event_photo> student_event_photo1 = student_event_photoRepository.findById(id);
         if (!student_event_photo1.isPresent()) throw
-                new NotFoundException("" + id_student_event_photo, "student_event_photo", "id");
+                new NotFoundException("" + id, "student_event_photo", "id");
         else
-            student_event_photoRepository.deleteById(id_student_event_photo);
-            return new Response("Deleted student_event_photo with id " + id_student_event_photo, null);
+            student_event_photoRepository.deleteById(id);
+            return new Response("Deleted student_event_photo with id " + id, null);
     }
 
     

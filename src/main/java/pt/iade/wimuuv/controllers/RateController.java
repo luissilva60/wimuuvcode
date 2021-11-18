@@ -27,11 +27,11 @@ public class RateController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public rate getRate(@PathVariable int id_rate) {
-        logger.info("Sending rate with id " + id_rate);
-        Optional<rate> rate1 =   rateRepository.findById(id_rate);
+    public rate getRate(@PathVariable int id) {
+        logger.info("Sending rate with id " + id);
+        Optional<rate> rate1 =   rateRepository.findById(id);
         if (!rate1.isPresent()) throw
-                new NotFoundException("" + id_rate, "Rate", "id");
+                new NotFoundException("" + id, "Rate", "id");
         else
             return rate1.get();
     }
@@ -44,14 +44,14 @@ public class RateController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteRate(@PathVariable int id_rate) {
-        logger.info("Deleting rate with id " + id_rate);
-        Optional<rate> rate1 = rateRepository.findById(id_rate);
+    public Response deleteRate(@PathVariable int id) {
+        logger.info("Deleting rate with id " + id);
+        Optional<rate> rate1 = rateRepository.findById(id);
         if (!rate1.isPresent()) throw
-                new NotFoundException("" + id_rate, "rate", "id");
+                new NotFoundException("" + id, "rate", "id");
         else
-            rateRepository.deleteById(id_rate);
-            return new Response("Deleted rate with id " + id_rate, null);
+            rateRepository.deleteById(id);
+            return new Response("Deleted rate with id " + id, null);
     }
 
 }

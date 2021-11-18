@@ -25,11 +25,11 @@ public class StateController {
         return stateRepository.findAll();
     }
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public state getState(@PathVariable int id_state) {
-        logger.info("Sending state with id " + id_state);
-        Optional<state> state1 =   stateRepository.findById(id_state);
+    public state getState(@PathVariable int id) {
+        logger.info("Sending state with id " + id);
+        Optional<state> state1 =   stateRepository.findById(id);
         if (!state1.isPresent()) throw
-                new NotFoundException("" + id_state, "State", "id");
+                new NotFoundException("" + id, "State", "id");
         else
             return state1.get();
     }
@@ -40,13 +40,13 @@ public class StateController {
         return savedState;
     }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteState(@PathVariable int id_state) {
-        logger.info("Deleting state with id " + id_state);
-        Optional<state> state1 = stateRepository.findById(id_state);
+    public Response deleteState(@PathVariable int id) {
+        logger.info("Deleting state with id " + id);
+        Optional<state> state1 = stateRepository.findById(id);
         if (!state1.isPresent()) throw
-                new NotFoundException("" + id_state, "state", "id");
+                new NotFoundException("" + id, "state", "id");
         else
-            stateRepository.deleteById(id_state);
-            return new Response("Deleted state with id " + id_state, null);
+            stateRepository.deleteById(id);
+            return new Response("Deleted state with id " + id, null);
     }
 }

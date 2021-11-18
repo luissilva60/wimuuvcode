@@ -11,12 +11,12 @@ import javax.persistence.Table;
 public class student_course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="stu_course_id") private int stu_course_id;
+    @Column(name="stu_course_id") private int id;
     @Column(name="stu_course_name") private String stu_course_name;
     
 
     public int getStu_course_id() {
-        return stu_course_id;
+        return id;
     }
     public String getStu_course_name() {
         return stu_course_name;

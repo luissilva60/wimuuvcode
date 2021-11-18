@@ -27,11 +27,11 @@ public class Student_RateController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public student_rate getOrg(@PathVariable int id_student_rate) {
-        logger.info("Sending org with id " + id_student_rate);
-        Optional<student_rate> student_rate1 =   student_rateRepository.findById(id_student_rate);
+    public student_rate getOrg(@PathVariable int id) {
+        logger.info("Sending org with id " + id);
+        Optional<student_rate> student_rate1 =   student_rateRepository.findById(id);
         if (!student_rate1.isPresent()) throw
-                new NotFoundException("" + id_student_rate, "student_rate", "id");
+                new NotFoundException("" + id, "student_rate", "id");
         else
             return student_rate1.get();
     }
@@ -44,14 +44,14 @@ public class Student_RateController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deletestudent_rate(@PathVariable int id_student_rate) {
-        logger.info("Deleting Org with id " + id_student_rate);
-        Optional<student_rate> student_rate1 = student_rateRepository.findById(id_student_rate);
+    public Response deletestudent_rate(@PathVariable int id) {
+        logger.info("Deleting Org with id " + id);
+        Optional<student_rate> student_rate1 = student_rateRepository.findById(id);
         if (!student_rate1.isPresent()) throw
-                new NotFoundException("" + id_student_rate, "student_rate", "id");
+                new NotFoundException("" + id, "student_rate", "id");
         else
-            student_rateRepository.deleteById(id_student_rate);
-            return new Response("Deleted org with id " + id_student_rate, null);
+            student_rateRepository.deleteById(id);
+            return new Response("Deleted org with id " + id, null);
     }
 
 

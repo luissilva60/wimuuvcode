@@ -12,14 +12,14 @@ import javax.persistence.Table;
 public class type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="type_id") private int type_id;
+    @Column(name="type_id") private int id;
     @Column(name="type_name") private String type_name;
     @Column(name="type_event") private String type_event;
     public String getType_event() {
         return type_event;
     }
     public int getType_id() {
-        return type_id;
+        return id;
     }
     public String getType_name() {
         return type_name;

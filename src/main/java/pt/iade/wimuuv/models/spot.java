@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class spot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="spot_id") private int spot_id;
+    @Column(name="spot_id") private int id;
     @Column(name="spot_name") private String spot_name;
     @Column(name="spot_address") private String spot_address;
     @Column(name="spot_description") private String spot_description;
@@ -24,7 +24,7 @@ public class spot {
         return spot_description;
     }
     public int getSpot_id() {
-        return spot_id;
+        return id;
     }
     public String getSpot_name() {
         return spot_name;

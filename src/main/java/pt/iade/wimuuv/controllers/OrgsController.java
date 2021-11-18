@@ -27,11 +27,11 @@ public class OrgsController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public orgs getOrg(@PathVariable int id_orgs) {
-        logger.info("Sending org with id " + id_orgs);
-        Optional<orgs> orgs1 =   orgsRepository.findById(id_orgs);
+    public orgs getOrg(@PathVariable int id) {
+        logger.info("Sending org with id " + id);
+        Optional<orgs> orgs1 =   orgsRepository.findById(id);
         if (!orgs1.isPresent()) throw
-                new NotFoundException("" + id_orgs, "Orgs", "id");
+                new NotFoundException("" + id, "Orgs", "id");
         else
             return orgs1.get();
     }
@@ -44,14 +44,14 @@ public class OrgsController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteOrgs(@PathVariable int id_orgs) {
-        logger.info("Deleting Org with id " + id_orgs);
-        Optional<orgs> orgs1 = orgsRepository.findById(id_orgs);
+    public Response deleteOrgs(@PathVariable int id) {
+        logger.info("Deleting Org with id " + id);
+        Optional<orgs> orgs1 = orgsRepository.findById(id);
         if (!orgs1.isPresent()) throw
-                new NotFoundException("" + id_orgs, "orgs", "id");
+                new NotFoundException("" + id, "orgs", "id");
         else
-            orgsRepository.deleteById(id_orgs);
-            return new Response("Deleted org with id " + id_orgs, null);
+            orgsRepository.deleteById(id);
+            return new Response("Deleted org with id " + id, null);
     }
 
 

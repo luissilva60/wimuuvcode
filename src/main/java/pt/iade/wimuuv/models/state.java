@@ -13,10 +13,10 @@ import javax.persistence.Table;
 public class state {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="state_id") private int state_id;
+    @Column(name="state_id") private int id;
     @Column(name="state_event") private String state_event;
     public int getState_id() {
-        return state_id;
+        return id;
     }
     public String getState_event() {
         return state_event;

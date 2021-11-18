@@ -11,12 +11,12 @@ import javax.persistence.Table;
 public class orgs {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="org_id") private int org_id;
+    @Column(name="org_id") private int id;
     @Column(name="org_name") private String org_name;
     @Column(name="org_initials") private String org_initials;
     public orgs(){}
     public int getOrg_id() {
-        return org_id;
+        return id;
     }
     public String getOrg_initials() {
         return org_initials;

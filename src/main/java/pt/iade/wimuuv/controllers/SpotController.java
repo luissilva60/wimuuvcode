@@ -28,11 +28,11 @@ public class SpotController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public spot getSpot(@PathVariable int id_spot) {
-        logger.info("Sending spot with id " + id_spot);
-        Optional<spot> spot1 =   spotRepository.findById(id_spot);
+    public spot getSpot(@PathVariable int id) {
+        logger.info("Sending spot with id " + id);
+        Optional<spot> spot1 =   spotRepository.findById(id);
         if (!spot1.isPresent()) throw
-                new NotFoundException("" + id_spot, "Spot", "id");
+                new NotFoundException("" + id, "Spot", "id");
         else
             return spot1.get();
     }
@@ -44,13 +44,13 @@ public class SpotController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteSpot(@PathVariable int id_spot) {
-        logger.info("Deleting spot with id " + id_spot);
-        Optional<spot> spot1 = spotRepository.findById(id_spot);
+    public Response deleteSpot(@PathVariable int id) {
+        logger.info("Deleting spot with id " + id);
+        Optional<spot> spot1 = spotRepository.findById(id);
         if (!spot1.isPresent()) throw
-                new NotFoundException("" + id_spot, "spot", "id");
+                new NotFoundException("" + id, "spot", "id");
         else
-            spotRepository.deleteById(id_spot);
-            return new Response("Deleted spot with id " + id_spot, null);
+            spotRepository.deleteById(id);
+            return new Response("Deleted spot with id " + id, null);
     }
 }

@@ -27,11 +27,11 @@ public class TypeController {
     }
     
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public type getType(@PathVariable int id_type) {
-        logger.info("Sending type with id " + id_type);
-        Optional<type> type1 =   typeRepository.findById(id_type);
+    public type getType(@PathVariable int id) {
+        logger.info("Sending type with id " + id);
+        Optional<type> type1 =   typeRepository.findById(id);
         if (!type1.isPresent()) throw
-                new NotFoundException("" + id_type, "Type", "id");
+                new NotFoundException("" + id, "Type", "id");
         else
             return type1.get();
     }
@@ -44,13 +44,13 @@ public class TypeController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteType(@PathVariable int id_type) {
-        logger.info("Deleting type with id " + id_type);
-        Optional<type> type1 = typeRepository.findById(id_type);
+    public Response deleteType(@PathVariable int id) {
+        logger.info("Deleting type with id " + id);
+        Optional<type> type1 = typeRepository.findById(id);
         if (!type1.isPresent()) throw
-                new NotFoundException("" + id_type, "type", "id");
+                new NotFoundException("" + id, "type", "id");
         else
-            typeRepository.deleteById(id_type);
-            return new Response("Deleted type with id " + id_type, null);
+            typeRepository.deleteById(id);
+            return new Response("Deleted type with id " + id, null);
     }
 }

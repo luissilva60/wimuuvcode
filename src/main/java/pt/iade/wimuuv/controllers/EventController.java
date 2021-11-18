@@ -27,11 +27,11 @@ public class EventController {
     }
     
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public event getEvent(@PathVariable int id_event) {
-        logger.info("Sending event with id " + id_event);
-        Optional<event> event1 =   eventRepository.findById(id_event);
+    public event getEvent(@PathVariable int id) {
+        logger.info("Sending event with id " + id);
+        Optional<event> event1 =   eventRepository.findById(id);
         if (!event1.isPresent()) throw
-                new NotFoundException("" + id_event, "Event", "id");
+                new NotFoundException("" + id, "Event", "id");
         else
             return event1.get();
     }
@@ -44,14 +44,14 @@ public class EventController {
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteEvent(@PathVariable int id_event) {
-        logger.info("Deleting event with id " + id_event);
-        Optional<event> event1 = eventRepository.findById(id_event);
+    public Response deleteEvent(@PathVariable int id) {
+        logger.info("Deleting event with id " + id);
+        Optional<event> event1 = eventRepository.findById(id);
         if (!event1.isPresent()) throw
-                new NotFoundException("" + id_event, "event", "id");
+                new NotFoundException("" + id, "event", "id");
         else
-            eventRepository.deleteById(id_event);
-            return new Response("Deleted event with id " + id_event, null);
+            eventRepository.deleteById(id);
+            return new Response("Deleted event with id " + id, null);
     }
 
 }

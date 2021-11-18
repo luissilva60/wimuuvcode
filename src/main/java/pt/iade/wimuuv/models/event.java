@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="event_id") private int event_id;
+    @Column(name="event_id") private int id;
     @Column(name="event_name") private String event_name;
     @Column(name="event_description") private String event_description;
     @Column(name="event_type_id") private String event_type_id;
@@ -51,7 +51,7 @@ public class event {
         return event_endtime;
     }
     public int getEvent_id() {
-        return event_id;
+        return id;
     }
     public String getEvent_name() {
         return event_name;
