@@ -15,8 +15,8 @@ import javax.persistence.Table;
 public class student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="stu_id") private int id;
     @Column(name="stu_name") private String stu_name;
-    @Column(name="stu_id") private int stu_id;
     @Column(name="stu_email") private String stu_email;
     @Column(name="stu_password") private String stu_password;
     @Column(name="stu_bdate") private LocalDate stu_bdate;
@@ -36,7 +36,7 @@ public class student {
         return stu_gender;
     }
     public int getId() {
-        return stu_id;
+        return id;
     }
     public String getStu_email() {
         return stu_email;
