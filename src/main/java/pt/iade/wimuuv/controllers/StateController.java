@@ -36,7 +36,7 @@ public class StateController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public state saveState(@RequestBody state state) {
         state savedState = stateRepository.save(state);
-        logger.info("Saving state with id " + savedState.getState_id());
+        logger.info("Saving state with id " + savedState.getId());
         return savedState;
     }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)

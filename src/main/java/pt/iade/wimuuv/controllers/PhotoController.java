@@ -39,7 +39,7 @@ public class PhotoController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public photo savePhoto(@RequestBody photo photo) {
         photo savedPhoto = photoRepository.save(photo);
-        logger.info("Saving photo with id " + savedPhoto.getPhoto_id());
+        logger.info("Saving photo with id " + savedPhoto.getId());
         return savedPhoto;
     }
 

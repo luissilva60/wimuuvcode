@@ -12,14 +12,14 @@ public class student_course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_course_id") private int id;
-    @Column(name="stu_course_name") private String stu_course_name;
+    @Column(name="stu_course_name") private String Name;
     
 
-    public int getStu_course_id() {
+    public int getId() {
         return id;
     }
-    public String getStu_course_name() {
-        return stu_course_name;
+    public String getName() {
+        return Name;
     }
     
 }

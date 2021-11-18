@@ -12,18 +12,18 @@ import javax.persistence.Table;
 public class rate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="rate_event") private int rate_event;
+    @Column(name="rate_event") private int event;
     @Column(name="rate_id") private int id;
-    @Column(name="ev_rated_id") private int ev_rated_id;
+    @Column(name="ev_rated_id") private int ratedId;
     
-    public int getRate_event() {
-        return rate_event;
+    public int getEvent() {
+        return event;
     }
-    public int getRate_id() {
+    public int getId() {
         return id;
     }
-    public int getEv_rated_id() {
-        return ev_rated_id;
+    public int getRatedId() {
+        return ratedId;
     }
     
 

@@ -15,13 +15,13 @@ public class photo {
     @Column(name="photo_id") private int id;
     @Column(name="photo_path") private String path;
     @Column(name="photo_name") private String name;
-    public int getPhoto_id() {
+    public int getId() {
         return id;
     }
-    public String getPhoto_name() {
+    public String getName() {
         return name;
     }
-    public String getPhoto_path() {
+    public String getPath() {
         return path;
     }
     

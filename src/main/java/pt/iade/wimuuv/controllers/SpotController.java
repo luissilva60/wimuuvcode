@@ -39,7 +39,7 @@ public class SpotController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public spot saveSpot(@RequestBody spot spot) {
         spot savedSpot = spotRepository.save(spot);
-        logger.info("Saving spot with id " + savedSpot.getSpot_id());
+        logger.info("Saving spot with id " + savedSpot.getId());
         return savedSpot;
     }
 

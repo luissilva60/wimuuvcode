@@ -14,11 +14,11 @@ public class state {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="state_id") private int id;
-    @Column(name="state_event") private String state_event;
-    public int getState_id() {
+    @Column(name="state_event") private String event;
+    public int getId() {
         return id;
     }
-    public String getState_event() {
-        return state_event;
+    public String getEvent() {
+        return event;
     }
 }

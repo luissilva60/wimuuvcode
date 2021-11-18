@@ -13,24 +13,24 @@ public class spot {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="spot_id") private int id;
-    @Column(name="spot_name") private String spot_name;
-    @Column(name="spot_address") private String spot_address;
-    @Column(name="spot_description") private String spot_description;
-    @Column(name="spot_photo") private int spot_photo;
-    public String getSpot_address() {
-        return spot_address;
+    @Column(name="spot_name") private String name;
+    @Column(name="spot_address") private String address;
+    @Column(name="spot_description") private String description;
+    @Column(name="spot_photo") private int photo;
+    public String getAddress() {
+        return address;
     }
-    public String getSpot_description() {
-        return spot_description;
+    public String getDescription() {
+        return description;
     }
-    public int getSpot_id() {
+    public int getId() {
         return id;
     }
-    public String getSpot_name() {
-        return spot_name;
+    public String getName() {
+        return name;
     }
-    public int getSpot_photo() {
-        return spot_photo;
+    public int getPhoto() {
+        return photo;
     }
     
     

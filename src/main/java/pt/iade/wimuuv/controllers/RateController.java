@@ -39,7 +39,7 @@ public class RateController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public rate savedRate(@RequestBody rate rate) {
         rate savedRate = rateRepository.save(rate);
-        logger.info("Saving rate with id " + savedRate.getRate_id());
+        logger.info("Saving rate with id " + savedRate.getId());
         return savedRate;
     }
 
