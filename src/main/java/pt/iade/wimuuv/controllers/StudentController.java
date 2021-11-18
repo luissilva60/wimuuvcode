@@ -26,11 +26,11 @@ public class StudentController {
     }
 
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public student getStudent(@PathVariable int id_student) {
-        logger.info("Sending student with id " + id_student);
-        Optional<student> _student =   studentRepository.findById(id_student);
+    public student getStudent(@PathVariable int stu_id) {
+        logger.info("Sending student with id " + stu_id);
+        Optional<student> _student =   studentRepository.findById(stu_id);
         if (!_student.isPresent()) throw
-                new NotFoundException("" + id_student, "Student", "id");
+                new NotFoundException("" + stu_id, "Student", "id");
         else
             return _student.get();
     }
@@ -42,13 +42,13 @@ public class StudentController {
         return savedStudent;
     }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response deleteStudent(@PathVariable int id_student) {
-        logger.info("Deleting student with id " + id_student);
-        Optional<student> student1 = studentRepository.findById(id_student);
+    public Response deleteStudent(@PathVariable int stu_id) {
+        logger.info("Deleting student with id " + stu_id);
+        Optional<student> student1 = studentRepository.findById(stu_id);
         if (!student1.isPresent()) throw
-                new NotFoundException("" + id_student, "student", "id");
+                new NotFoundException("" + stu_id, "student", "id");
         else
-            studentRepository.deleteById(id_student);
-            return new Response("Deleted student with id " + id_student, null);
+            studentRepository.deleteById(stu_id);
+            return new Response("Deleted student with id " + stu_id, null);
     }
 }
