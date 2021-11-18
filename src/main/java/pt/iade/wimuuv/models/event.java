@@ -22,13 +22,13 @@ public class event {
     @Column(name="event_id") private int id;
     @Column(name="event_name") private String event_name;
     @Column(name="event_description") private String event_description;
-    @Column(name="event_type_id") private String event_type_id;
+    @Column(name="event_type_id") private int event_type_id;
     @Column(name="event_date") private LocalDate event_date;
     @Column(name="event_starttime") private Time event_starttime;
     @Column(name="event_endtime") private Time event_endtime;
-    @Column(name="event_duration") private double event_duration;
-    @Column(name="event_org_id") private String event_org_id;
-    @Column(name="event_spot_id") private String event_spot_id ;
+    @Column(name="event_duration") private Time event_duration;
+    @Column(name="event_org_id") private int event_org_id;
+    @Column(name="event_spot_id") private int event_spot_id ;
     @Column(name="event_capacity") private int event_capacity;
     @Column(name="event_photos_id") private int event_photos_id;
     @Column(name="event_state_id ") private String event_state_id ;
@@ -44,7 +44,7 @@ public class event {
     public String getEvent_description() {
         return event_description;
     }
-    public double getEvent_duration() {
+    public Time getEvent_duration() {
         return event_duration;
     }
     public Time getEvent_endtime() {
@@ -56,7 +56,7 @@ public class event {
     public String getEvent_name() {
         return event_name;
     }
-    public String getEvent_org_id() {
+    public int getEvent_org_id() {
         return event_org_id;
     }
     public int getEvent_photos() {
@@ -65,7 +65,7 @@ public class event {
     public int getEvent_rating() {
         return event_rate_id;
     }
-    public String getEvent_spot_id() {
+    public int getEvent_spot_id() {
         return event_spot_id;
     }
     public Time getEvent_starttime() {
@@ -74,7 +74,7 @@ public class event {
     public String getEvent_state_id() {
         return event_state_id;
     }
-    public String getEvent_type_id() {
+    public int getEvent_type_id() {
         return event_type_id;
     }
     
