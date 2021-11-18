@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="state")
 
@@ -19,6 +20,5 @@ public class state {
     }
     public String getState_event() {
         return state_event;
-    }    
-    
+    }
 }

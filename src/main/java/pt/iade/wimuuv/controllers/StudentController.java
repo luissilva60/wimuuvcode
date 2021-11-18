@@ -28,11 +28,11 @@ public class StudentController {
     @GetMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public student getStudent(@PathVariable int id_student) {
         logger.info("Sending student with id " + id_student);
-        Optional<student> student1 =   studentRepository.findById(id_student);
-        if (!student1.isPresent()) throw
+        Optional<student> _student =   studentRepository.findById(id_student);
+        if (!_student.isPresent()) throw
                 new NotFoundException("" + id_student, "Student", "id");
         else
-            return student1.get();
+            return _student.get();
     }
 
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
