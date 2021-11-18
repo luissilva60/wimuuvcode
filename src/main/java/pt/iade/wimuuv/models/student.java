@@ -50,6 +50,10 @@ public class student {
     public int getPhotoId() {
         return photoId;
     }
+    public String getPassword() {
+        return password;
+    }
+    
 
     
     
