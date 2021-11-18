@@ -14,20 +14,20 @@ public class student_rate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_rate_id") private int id;
-    @Column(name="stu_rate_ev") private int stu_rate_ev;
-    @Column(name="stu_rid") private int stu_rid;
-    @Column(name="ev_rid") private int ev_rid;
-    public int getEv_rid() {
-        return ev_rid;
+    @Column(name="stu_rate_ev") private int stuRateEv;
+    @Column(name="stu_rid") private int stuRid;
+    @Column(name="ev_rid") private int evRid;
+    public int getEvRid() {
+        return evRid;
     }
-    public int getStu_rate_ev() {
-        return stu_rate_ev;
+    public int getStuRateEv() {
+        return stuRateEv;
     }
-    public int getStu_rate_id() {
+    public int getId() {
         return id;
     }
-    public int getStu_rid() {
-        return stu_rid;
+    public int getStuRid() {
+        return stuRid;
     }  
     
 }

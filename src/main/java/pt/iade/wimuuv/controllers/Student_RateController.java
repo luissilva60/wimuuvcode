@@ -39,7 +39,7 @@ public class Student_RateController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public student_rate savestudent_rate(@RequestBody student_rate org) {
         student_rate savedstudent_rate = student_rateRepository.save(org);
-        logger.info("Saving org with id " + savedstudent_rate.getStu_rate_id());
+        logger.info("Saving org with id " + savedstudent_rate.getId());
         return savedstudent_rate;
     }
 

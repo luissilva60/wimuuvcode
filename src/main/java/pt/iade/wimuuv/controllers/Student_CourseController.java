@@ -38,7 +38,7 @@ public class Student_CourseController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public student_course saveStudent_course(@RequestBody student_course student_course) {
         student_course savedStudent_course = student_courseRepository.save(student_course);
-        logger.info("Saving student_course with id " + savedStudent_course.getStu_course_id());
+        logger.info("Saving student_course with id " + savedStudent_course.getId());
         return savedStudent_course;
     }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -13,16 +13,16 @@ public class type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="type_id") private int id;
-    @Column(name="type_name") private String type_name;
-    @Column(name="type_event") private String type_event;
-    public String getType_event() {
-        return type_event;
+    @Column(name="type_name") private String name;
+    @Column(name="type_event") private String event;
+    public String getEvent() {
+        return event;
     }
-    public int getType_id() {
+    public int getId() {
         return id;
     }
-    public String getType_name() {
-        return type_name;
+    public String getName() {
+        return name;
     }
     
     

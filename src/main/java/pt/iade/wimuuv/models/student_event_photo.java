@@ -12,17 +12,17 @@ public class student_event_photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="ev_photo_id") private int id;
-    @Column(name="stu_photo_id") private int stu_photo_id;
-    @Column(name="stu_in_photo_id") private String stu_in_photo_id;
+    @Column(name="stu_photo_id") private int photoId;
+    @Column(name="stu_in_photo_id") private String stuInPhotoId;
     
     public int getEv_photo_id() {
         return id;
     }
-    public int getStu_photo_id() {
-        return stu_photo_id;
+    public int getPhotoId() {
+        return photoId;
     }
-    public String getStu_in_photo_id() {
-        return stu_in_photo_id;
+    public String getStuInPhotoId() {
+        return stuInPhotoId;
     }
     
 }

@@ -42,7 +42,7 @@ public class Student_EventController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public student_event savestudent_event(@RequestBody student_event org) {
         student_event savedstudent_event = student_eventRepository.save(org);
-        logger.info("Saving org with id " + savedstudent_event.getStu_ev_id());
+        logger.info("Saving org with id " + savedstudent_event.getId());
         return savedstudent_event;
     }
 

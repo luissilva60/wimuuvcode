@@ -39,7 +39,7 @@ public class TypeController {
     @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public type saveType(@RequestBody type type) {
         type savedType = typeRepository.save(type);
-        logger.info("Saving type with id " + savedType.getType_id());
+        logger.info("Saving type with id " + savedType.getId());
         return savedType;
     }
 
