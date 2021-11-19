@@ -54,4 +54,9 @@ public class EventController {
             return new Response("Deleted event with id " + id, null);
     }
 
+    @GetMapping(path = "/not/1", produces= MediaType.APPLICATION_JSON_VALUE)
+        public Iterable<String> getEventOrgId1() {
+        return eventRepository.getEventOrgId1();
+   }
+
 }
