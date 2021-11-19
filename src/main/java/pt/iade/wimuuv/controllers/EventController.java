@@ -14,7 +14,7 @@ import pt.iade.wimuuv.models.repositories.EventRepository;
 
 
 @RestController
-@RequestMapping(path = "/api/event")
+@RequestMapping(path = "/api/events")
 public class EventController {
     private final Logger logger = LoggerFactory.getLogger(EventRepository.class);
     @Autowired
@@ -57,6 +57,10 @@ public class EventController {
     @GetMapping(path = "/not/1", produces= MediaType.APPLICATION_JSON_VALUE)
         public Iterable<String> getEventOrgId1() {
         return eventRepository.getEventOrgId1();
+   }
+   @GetMapping(path = "/state/1", produces= MediaType.APPLICATION_JSON_VALUE)
+        public Iterable<String> getEventState1() {
+        return eventRepository.getEventState1();
    }
 
 }
