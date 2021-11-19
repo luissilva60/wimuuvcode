@@ -8,7 +8,7 @@ import pt.iade.wimuuv.models.event;
 
 public interface EventRepository extends CrudRepository<event, Integer> {
     String resQuery1 = "select event_name, spot_name "+
-                "from event, spot " + "where event_org_id = 1";
+                "from event, spot " + "where org_id = 1";
 
     @Query(value=resQuery1, nativeQuery=true)
     Iterable<String>getEventOrgId1();
