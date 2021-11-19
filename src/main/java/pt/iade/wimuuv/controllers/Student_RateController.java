@@ -54,7 +54,7 @@ public class Student_RateController {
             return new Response("Deleted org with id " + id, null);
     }
 
-    @GetMapping(path = "/event/rate", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/event", produces= MediaType.APPLICATION_JSON_VALUE)
         public Iterable<String> getDescRateEv2() {
         return student_rateRepository.getDescRateEv2();
    }
