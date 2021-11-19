@@ -46,7 +46,7 @@ public class StudentController {
     }*/
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody student studentId) {
-        logger.info("Regestring student with id " + studentId.getId() +
+        logger.info("Registering student with id " + studentId.getId() +
         " of course with id "+studentId.getCrseId());
         Integer inserted = studentRepository.registerStudent(studentId);
     return new Response(inserted+" registration created",studentId);
