@@ -37,13 +37,6 @@ public class StudentController {
         else
             return _student.get();
     }
-
-    /*@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public student saveStudent(@RequestBody student student) {
-        student savedStudent = studentRepository.save(student);
-        logger.info("Saving student with id " + savedStudent.getId());
-        return savedStudent;
-    }*/
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody student studentId) {
         logger.info("Registering student with id " + studentId.getId() +
