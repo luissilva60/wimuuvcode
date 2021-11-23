@@ -62,5 +62,17 @@ public class EventController {
         public Iterable<String> getEventState1() {
         return eventRepository.getEventState1();
    }
-
+   @GetMapping(path = "/type/1/spot/2", produces= MediaType.APPLICATION_JSON_VALUE)
+        public Iterable<String> getEventPalestrainIade() {
+        return eventRepository.getEventPalestrainIade();
+   }
+   @GetMapping(path = "/org/2", produces= MediaType.APPLICATION_JSON_VALUE)
+        public Iterable<String> getEventOrg2() {
+        return eventRepository.getEventOrg2();
+   }
+   @GetMapping(path = "/type/2", produces= MediaType.APPLICATION_JSON_VALUE)
+        public Iterable<String> getEventtype2() {
+        return eventRepository.getEventtype2();
+   }
+   
 }

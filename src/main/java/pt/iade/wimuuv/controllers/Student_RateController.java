@@ -59,6 +59,6 @@ public class Student_RateController {
         return student_rateRepository.getDescRateEv2();
    }
 
-
+   
 
 }
