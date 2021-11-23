@@ -7,44 +7,45 @@ import org.springframework.data.repository.CrudRepository;
 import pt.iade.wimuuv.models.event;
 
 public interface EventRepository extends CrudRepository<event, Integer> {
-    String resQuery1 = "select distinct event_name, spot_name "+
+    String evQuery1 = "select distinct event_name, spot_name "+
                 "from event, spot " + "where event_org_id = 1";
 
-    @Query(value=resQuery1, nativeQuery=true)
+    @Query(value=evQuery1, nativeQuery=true)
     Iterable<String>getEventOrgId1();
     
-    String resQuery2 = "select distinct event_name, org_name, spot_name, state_event "+
+    String evQuery2 = "select distinct event_name, org_name, spot_name, state_event "+
                 "from event, org, spot, state "+
                 "where state_id = 1";
 
-    @Query(value=resQuery2, nativeQuery=true)
+    @Query(value=evQuery2, nativeQuery=true)
     Iterable<String>getEventState1();
     
 
-    String resQuery3 = "select distinct event_name, event_date, event_starttime,"+
-    " event_endtime, spot_name, org_name, type_event "+
-    "from event, spot, org, type "+
-    "where spot_id = 2 and type_id = 1";
+    String evQuery3 = "select distinct event_name, event_date, event_starttime, "+
+    "event_endtime, spot_name, type_event "+
+    "from event, spot, type "+
+    "where spot_id = 2 and type_id = 3 and event_spot_id = spot.spot_id";
 
-    @Query(value=resQuery3, nativeQuery=true)
+    @Query(value=evQuery3, nativeQuery=true)
     Iterable<String>getEventPalestrainIade();
     
     
-    String resQuery4 = "select distinct event_name, event_date, event_starttime,"+
+    String evQuery4 = "select distinct event_name, event_date, event_starttime,"+
     " event_duration, spot_name, org_name "+
     "from event, spot, org "+
-    "where event_org_id = 2";
+    "where event_org_id = 2 and event_org_id = org.org_id and event_spot_id = spot.spot_id";
 
-    @Query(value=resQuery4, nativeQuery=true)
+    @Query(value=evQuery4, nativeQuery=true)
     Iterable<String>getEventOrg2();
     
     
-    String resQuery5 = "select distinct event_name, event_date, event_starttime,"+ 
+    String evQuery5 = "select distinct event_name, event_date, event_starttime,"+ 
     " event_duration, event_capacity, spot_name, org_name, type_event "+
     "from event, spot, org, type "+
-    "where type_id = 2";
+    "where type_id = 2 and event_org_id = org.org_id and event_spot_id = "+
+    "spot.spot_id and event_type_id = type.type_id";
 
-    @Query(value=resQuery5, nativeQuery=true)
+    @Query(value=evQuery5, nativeQuery=true)
     Iterable<String>getEventtype2();
 
     
