@@ -17,7 +17,7 @@ public class spot {
     @Column(name="spot_long") private double longitude;
     @Column(name="spot_lat") private double latitude;
     @Column(name="spot_description") private String description;
-    @Column(name="spot_photo") private int photo;
+    @Column(name="spot_photo_id") private int photo;
     
     public String getDescription() {
         return description;
