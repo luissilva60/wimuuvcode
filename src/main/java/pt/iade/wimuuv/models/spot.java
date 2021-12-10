@@ -14,12 +14,11 @@ public class spot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="spot_id") private int id;
     @Column(name="spot_name") private String name;
-    @Column(name="spot_address") private String address;
+    @Column(name="spot_long") private double longitude;
+    @Column(name="spot_lat") private double latitude;
     @Column(name="spot_description") private String description;
     @Column(name="spot_photo") private int photo;
-    public String getAddress() {
-        return address;
-    }
+    
     public String getDescription() {
         return description;
     }
@@ -31,6 +30,12 @@ public class spot {
     }
     public int getPhoto() {
         return photo;
+    }
+    public double getLatitude() {
+        return latitude;
+    }
+    public double getLongitude() {
+        return longitude;
     }
     
     
