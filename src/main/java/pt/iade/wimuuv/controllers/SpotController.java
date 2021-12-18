@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
-
+import pt.iade.wimuuv.models.event;
 import pt.iade.wimuuv.models.spot;
 import pt.iade.wimuuv.models.exceptions.NotFoundException;
 import pt.iade.wimuuv.models.exceptions.Response;
@@ -52,5 +52,10 @@ public class SpotController {
         else
             spotRepository.deleteById(id);
             return new Response("Deleted spot with id " + id, null);
+    }
+    @GetMapping(path = "/{id:[0-9]+}/events", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<spot> findAllEventsinSpot(@PathVariable int id) {
+        logger.info("Sending all done spots from user id " + id);
+        return spotRepository.findAllEventsinSpot(id);
     }
 }
