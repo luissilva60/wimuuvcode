@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import java.sql.Date;
 import java.util.Optional;
 
 
@@ -54,4 +56,11 @@ public class StudentController {
             studentRepository.deleteById(id);
             return new Response("Deleted student with id " + id, null);
     }
+
+    @PostMapping(path = "/{name}/{email}/{password}/{bdate}/{gender}/{course_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<student> findAllEventsinSpot(@PathVariable String name, String email, String password, Date bdate, char gender, int course_id ) {
+    
+        return studentRepository.SignupStudent(name, email,password, bdate, gender,course_id );
+    }
+
 }
