@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import pt.iade.wimuuv.models.spot;
 
 public interface SpotRepository extends CrudRepository<spot, Integer>{
-    @Query(value = "select * from spot inner join event on event.event_spot_id = spot.spot_id where event_spot_id = :id",
+    @Query(value = "select * from event inner join spot on spot.spot_id = event.event_spot_id where spot_id = :id",
             nativeQuery = true)
     Iterable<spot> findAllEventsinSpot(int id);
 }
