@@ -7,11 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import pt.iade.wimuuv.models.event;
 
 public interface EventRepository extends CrudRepository<event, Integer> {
-    String evQuery1 = "select distinct event_name, spot_name "+
-                "from event, spot " + "where event_org_id = 1";
-
-    @Query(value=evQuery1, nativeQuery=true)
-    Iterable<String>getEventOrgId1();
     
     String evQuery2 = "select distinct event_name, org_name, spot_name, state_event "+
                 "from event, org, spot, state "+
@@ -30,13 +25,6 @@ public interface EventRepository extends CrudRepository<event, Integer> {
     Iterable<String>getEventPalestrainIade();
     
     
-    String evQuery4 = "select distinct event_name, event_date, event_starttime,"+
-    " event_duration, spot_name, org_name "+
-    "from event, spot, org "+
-    "where event_org_id = 2 and event_org_id = org.org_id and event_spot_id = spot.spot_id";
-
-    @Query(value=evQuery4, nativeQuery=true)
-    Iterable<String>getEventOrg2();
     
     
     String evQuery5 = "select distinct event_name, event_date, event_starttime,"+ 

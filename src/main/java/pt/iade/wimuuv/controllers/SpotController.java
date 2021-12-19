@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
-import pt.iade.wimuuv.models.event;
+
 import pt.iade.wimuuv.models.spot;
 import pt.iade.wimuuv.models.exceptions.NotFoundException;
 import pt.iade.wimuuv.models.exceptions.Response;
