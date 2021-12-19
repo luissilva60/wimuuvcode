@@ -45,9 +45,15 @@ public interface EventRepository extends CrudRepository<event, Integer> {
     "where type_id = 2 and event_org_id = org.org_id and event_spot_id = "+
     "spot.spot_id and event_type_id = type.type_id";
 
+
+    
     @Query(value=evQuery5, nativeQuery=true)
     Iterable<String>getEventtype2();
 
+
+    @Query(value = "select * from event where event_spot_id = :id",
+            nativeQuery = true)
+    Iterable<event> findAllEventsinSpot(int id);
     
     
 }
