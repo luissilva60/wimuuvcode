@@ -53,18 +53,10 @@ public class event {
     public int getId() {
         return id;
     }
-    public String getEvent_name() {
-        return name;
-    }
     public int getOrgId() {
         return orgId;
     }
-    public int getPhotos() {
-        return photosId;
-    }
-    public int getRating() {
-        return rateId;
-    }
+    
     public int getSpotId() {
         return spotId;
     }
