@@ -31,7 +31,7 @@ public class event {
     @Column(name="event_spot_id") private int spotId ;
     @Column(name="event_capacity") private int capacity;
     @Column(name="event_photos_id") private int photosId;
-    @Column(name="event_state_id ") private String stateId ;
+    @Column(name="event_state_id ") private int stateId ;
     @Column(name="event_rate_id ") private int rateId ;
     
 
@@ -71,7 +71,7 @@ public class event {
     public Time getStarttime() {
         return starttime;
     }
-    public String getStateId() {
+    public int getStateId() {
         return stateId;
     }
     public int getTypeId() {
