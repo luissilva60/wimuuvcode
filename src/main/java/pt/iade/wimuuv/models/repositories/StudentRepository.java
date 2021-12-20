@@ -23,6 +23,18 @@ public interface StudentRepository extends CrudRepository<student, Integer>{
     Integer registerStudent(@Param("student") student student);
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @Query(value = "insert into student (stu_name, stu_email, stu_password,"+
         "stu_bdate, stu_gender, stu_crse_id)"+
         "values(:name, :email, "+

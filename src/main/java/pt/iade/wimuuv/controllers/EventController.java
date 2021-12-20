@@ -36,6 +36,14 @@ public class EventController {
             return event1.get();
     }
 
+
+
+
+    
+
+
+
+
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveEvent(@RequestBody event eventId) {
         logger.info("Registering event with id " + eventId.getId() +
@@ -44,6 +52,19 @@ public class EventController {
         return new Response(inserted+" registration created",eventId);
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteEvent(@PathVariable int id) {
         logger.info("Deleting event with id " + id);

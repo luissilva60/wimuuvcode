@@ -39,6 +39,19 @@ public class StudentController {
         else
             return _student.get();
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveStudent(@RequestBody student studentId) {
         logger.info("Registering student with id " + studentId.getId() +
@@ -46,6 +59,18 @@ public class StudentController {
         Integer inserted = studentRepository.registerStudent(studentId);
         return new Response(inserted+" registration created",studentId);
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteStudent(@PathVariable int id) {
         logger.info("Deleting student with id " + id);
