@@ -63,8 +63,8 @@ public class StudentController {
         return studentRepository.SignupStudent(name, email,password, bdate, gender,course_id );
     }
 
-    @PutMapping(path = "/{id:[0-9]+}/changepw/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response ChangePasswordStudent(@PathVariable Integer id,
+    @PutMapping(path = "/{id}/changepw/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response ChangePasswordStudent(@PathVariable int id,
                                         @PathVariable String password) {
         if(studentRepository.findById(id).isPresent()){
         Iterable<student> updated = studentRepository.ChangePasswordStudent(password, id);
