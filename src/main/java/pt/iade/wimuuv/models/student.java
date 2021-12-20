@@ -22,7 +22,7 @@ public class student {
     @Column(name="stu_bdate") private LocalDate bdate;
     @Column(name="stu_gender") private char gender;
     @Column(name="stu_crse_id") private int crseId;
-    @Column(name="stu_photo_id") private int photoId;
+
     public student() {}
     public LocalDate getBdate() {
         return bdate;
@@ -47,9 +47,7 @@ public class student {
     public int getCrseId() {
         return crseId;
     }
-    public int getPhotoId() {
-        return photoId;
-    }
+   
     public String getPassword() {
         return password;
     }
