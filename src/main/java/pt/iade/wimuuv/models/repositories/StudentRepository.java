@@ -31,4 +31,9 @@ public interface StudentRepository extends CrudRepository<student, Integer>{
     Iterable<student> SignupStudent(String name, String email, String password, Date bdate, char gender, int course_id );
 
                         
+    @Query(value = "UPDATE student " + 
+    "SET stu_password = ':password' "+
+    "WHERE stu_id = :id",
+    nativeQuery = true)
+    Iterable<student> ChangePasswordStudent(String password, int id);
 }

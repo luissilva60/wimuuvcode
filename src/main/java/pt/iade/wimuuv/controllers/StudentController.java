@@ -63,4 +63,11 @@ public class StudentController {
         return studentRepository.SignupStudent(name, email,password, bdate, gender,course_id );
     }
 
+    @GetMapping(path = "/{id:[0-9]+}/changepw/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<student> ChangePasswordStudent(@PathVariable String password, int id) {
+        logger.info("Sending all events with org id: " + id);
+        return studentRepository.ChangePasswordStudent(password, id);
+    }
+    
+
 }
