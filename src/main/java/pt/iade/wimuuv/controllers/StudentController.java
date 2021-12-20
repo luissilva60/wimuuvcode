@@ -67,9 +67,9 @@ public class StudentController {
     public Response ChangePasswordStudent(@PathVariable int id,
                                         @PathVariable String password) {
         if(studentRepository.findById(id).isPresent()){
-        Iterable<student> updated = studentRepository.ChangePasswordStudent(password, id);
+            Iterable<student> updated = studentRepository.ChangePasswordStudent(password, id);
 
-        return new Response(updated +"Updated student with id : "+ id, password);
+            return new Response(updated +"Updated student with id : "+ id, password);
         }else{
             return null;
         }
