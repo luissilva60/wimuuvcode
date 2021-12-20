@@ -23,7 +23,7 @@ public interface EventRepository extends CrudRepository<event, Integer> {
         ":#{#event.description}, :#{#event.date}"+
         ", :#{#event.starttime}, :#{#event.endtime}, :#{#event.duration},"+
         " :#{#event.orgId}, :#{#event.spotId}, :#{#event.capacity}, :#{#event.stateId},"+
-        " :#{#event.rateId} )", nativeQuery=true)
+        " :#{#event.rating} )", nativeQuery=true)
     Integer registerEvent(@Param("event") event event);
     
     
