@@ -45,4 +45,9 @@ public interface EventRepository extends CrudRepository<event, Integer> {
     Iterable<event> findAllEventsinSpot(int id);
     
     
+    @Query(value = "select * from event " + 
+                "where event_org_id = :id",
+            nativeQuery = true)
+    Iterable<event> getAllOrgEvents(int id);
+    
 }
