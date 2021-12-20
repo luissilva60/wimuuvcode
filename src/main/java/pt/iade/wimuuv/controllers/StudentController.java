@@ -64,8 +64,8 @@ public class StudentController {
     }
 
     @PutMapping(path = "/{id:[0-9]+}/changepw/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response ChangePasswordStudent(@PathVariable String password, 
-                                          @PathVariable int id) {
+    public Response ChangePasswordStudent(@PathVariable Integer id,
+                                        @PathVariable String password) {
         if(studentRepository.findById(id).isPresent()){
         Iterable<student> updated = studentRepository.ChangePasswordStudent(password, id);
 
