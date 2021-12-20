@@ -18,12 +18,12 @@ public interface EventRepository extends CrudRepository<event, Integer> {
     @Modifying @Transactional
     @Query(value="insert into event (event_type_id, event_name, event_description,"+
         "event_date, event_starttime, event_endtime, event_duration, event_org_id, "+
-        "event_spot_id, event_capacity, event_state_id, event_rate_id )"+
+        "event_spot_id, event_capacity, event_state_id )"+
         "values(:#{#event.typeId}, :#{#event.event_name}, "+
         ":#{#event.description}, :#{#event.date}"+
         ", :#{#event.starttime}, :#{#event.endtime}, :#{#event.duration},"+
         " :#{#event.orgId}, :#{#event.spotId}, :#{#event.capacity}, :#{#event.stateId},"+
-        " :#{#event.rating} )", nativeQuery=true)
+        " )", nativeQuery=true)
     Integer registerEvent(@Param("event") event event);
     
     
