@@ -35,5 +35,6 @@ public interface StudentRepository extends CrudRepository<student, Integer>{
     "SET stu_password = ':password' "+
     "WHERE stu_id = :id",
     nativeQuery = true)
-    Iterable<student> ChangePasswordStudent(String password, int id);
+    Iterable<student> ChangePasswordStudent(@Param ("password") String password, 
+                                            @Param("id") int id);
 }

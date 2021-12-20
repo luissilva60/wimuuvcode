@@ -64,9 +64,17 @@ public class StudentController {
     }
 
     @PutMapping(path = "/{id:[0-9]+}/changepw/{password}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<student> ChangePasswordStudent(@PathVariable String password, int id) {
-        logger.info("Sending all events with org id: " + id);
-        return studentRepository.ChangePasswordStudent(password, id);
+    public Response ChangePasswordStudent(@PathVariable String password, 
+                                          @PathVariable int id) {
+        if(studentRepository.findById(id).isPresent()){
+        Iterable<student> updated = studentRepository.ChangePasswordStudent(password, id);
+
+        return new Response(updated +"Updated student with id : "+ id, password);
+        }else{
+            return null;
+        }
+        
+    
     }
     
 
