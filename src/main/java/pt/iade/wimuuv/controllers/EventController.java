@@ -44,7 +44,7 @@ public class EventController {
 
 
 
-    @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveEvent(@RequestBody event eventId) {
         logger.info("Registering event with id " + eventId.getId() +
         " of course with id "+eventId.getEvent_name());

@@ -77,6 +77,15 @@ public class event {
     public int getTypeId() {
         return typeId;
     }
+    public String getName() {
+        return name;
+    }
+    public int getPhotosId() {
+        return photosId;
+    }
+    public int getRateId() {
+        return rateId;
+    }
     
     
 }
