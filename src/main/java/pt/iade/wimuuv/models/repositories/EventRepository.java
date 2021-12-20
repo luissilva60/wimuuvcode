@@ -1,12 +1,31 @@
 package pt.iade.wimuuv.models.repositories;
 
 
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import pt.iade.wimuuv.models.event;
 
 public interface EventRepository extends CrudRepository<event, Integer> {
+    
+    
+    
+    
+    @Modifying @Transactional
+    @Query(value="insert into event (event_type_id, event_name, event_description,"+
+        "event_date, event_starttime, event_endtime, event_duration, event_org_id, "+
+        "event_spot_id, event_capacity, event_state_id, event_rate_id )"+
+        "values(:#{#event.typeId}, :#{#event.name}, "+
+        ":#{#event.description}, :#{#event.date}"+
+        ", :#{#event.starttime}, :#{#event.endtime}, :#{#event.duration},"+
+        " :#{#event.orgId}, :#{#event.spotId}, :#{#event.capacity}, :#{#event.stateId},"+
+        " :#{#event.rateId} )", nativeQuery=true)
+    Integer registerEvent(@Param("event") event event);
+    
     
     String evQuery2 = "select distinct event_name, org_name, spot_name, state_event "+
                 "from event, org, spot, state "+

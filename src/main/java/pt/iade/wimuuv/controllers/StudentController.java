@@ -44,8 +44,8 @@ public class StudentController {
         logger.info("Registering student with id " + studentId.getId() +
         " of course with id "+studentId.getCrseId());
         Integer inserted = studentRepository.registerStudent(studentId);
-    return new Response(inserted+" registration created",studentId);
-}
+        return new Response(inserted+" registration created",studentId);
+    }
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response deleteStudent(@PathVariable int id) {
         logger.info("Deleting student with id " + id);

@@ -36,11 +36,12 @@ public class EventController {
             return event1.get();
     }
 
-    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public event saveEvent(@RequestBody event event) {
-        event savedEvent = eventRepository.save(event);
-        logger.info("Saving event with id " + savedEvent.getId());
-        return savedEvent;
+    @PostMapping(path = "/new", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response saveEvent(@RequestBody event eventId) {
+        logger.info("Registering student with id " + eventId.getId() +
+        " of course with id "+eventId.getEvent_name());
+        Integer inserted = eventRepository.registerEvent(eventId);
+        return new Response(inserted+" registration created",eventId);
     }
 
     @DeleteMapping(path = "/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
