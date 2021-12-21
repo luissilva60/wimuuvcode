@@ -108,4 +108,9 @@ public class EventController {
         return eventRepository.getAllTypeEvents(id);
     }
    
+    @GetMapping(path = "/spot/{spot_id:[0-9]+}/type/{type_id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<event> getAllTypeEventsinSpot(@PathVariable int type_id, @PathVariable int spot_id) {
+        logger.info("Sending all events with type" + type_id + " in spot: "+ spot_id);
+        return eventRepository.getAllTypeEventsinSpot(type_id, spot_id);
+    }
 }
