@@ -102,5 +102,10 @@ public class EventController {
         logger.info("Sending all events with org id: " + id);
         return eventRepository.getAllOrgEvents(id);
     }
+    @GetMapping(path = "/type/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<event> getAllTypeEvents(@PathVariable int id) {
+        logger.info("Sending all events with org id: " + id);
+        return eventRepository.getAllTypeEvents(id);
+    }
    
 }
