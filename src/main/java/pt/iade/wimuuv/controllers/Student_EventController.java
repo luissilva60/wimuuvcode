@@ -57,6 +57,10 @@ public class Student_EventController {
             return new Response("Deleted org with id " + id, null);
     }
 
-    
+    @GetMapping(path = "/historico/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<student_event> gethistorico(@PathVariable int id) {
+        logger.info("Sending history with stu id: " + id);
+        return student_eventRepository.gethistorico(id);
+    }
 
 }
