@@ -113,4 +113,10 @@ public class EventController {
         logger.info("Sending all events with type" + type_id + " in spot: "+ spot_id);
         return eventRepository.getAllTypeEventsinSpot(type_id, spot_id);
     }
+
+    @GetMapping(path = "/historico/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<event> getHistorico(@PathVariable int id) {
+        logger.info("Sending history with stu id: " + id);
+        return eventRepository.getHistorico(id);
+    }
 }
