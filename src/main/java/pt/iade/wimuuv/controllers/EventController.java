@@ -77,19 +77,7 @@ public class EventController {
     }
 
     
-   @GetMapping(path = "/state/inp", produces= MediaType.APPLICATION_JSON_VALUE)
-        public Iterable<String> getEventState1() {
-        return eventRepository.getEventState1();
-   }
-   @GetMapping(path = "/type/1/spot/2", produces= MediaType.APPLICATION_JSON_VALUE)
-        public Iterable<String> getEventPalestrainIade() {
-        return eventRepository.getEventPalestrainIade();
-   }
-  
-   @GetMapping(path = "/type/2", produces= MediaType.APPLICATION_JSON_VALUE)
-        public Iterable<String> getEventtype2() {
-        return eventRepository.getEventtype2();
-   }
+
 
    @GetMapping(path = "/spot/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<event> findAllEventsinSpot(@PathVariable int id) {
@@ -104,7 +92,7 @@ public class EventController {
     }
     @GetMapping(path = "/type/{id:[0-9]+}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<event> getAllTypeEvents(@PathVariable int id) {
-        logger.info("Sending all events with org id: " + id);
+        logger.info("Sending all events with type id: " + id);
         return eventRepository.getAllTypeEvents(id);
     }
    
