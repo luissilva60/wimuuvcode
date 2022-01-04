@@ -59,6 +59,13 @@ public class Student_RateController {
         return student_rateRepository.getDescRateEv2();
    }
 
+   @PostMapping(path = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response saveEvent(@RequestBody student_rate rate) {
+        logger.info("Registering rate with id " + rate.getId());
+        Integer inserted = student_rateRepository.registerRate(rate);
+        return new Response(inserted+" registration created",rate);
+    }
+
    
 
 }

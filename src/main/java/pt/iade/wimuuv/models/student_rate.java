@@ -15,6 +15,7 @@ public class student_rate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_rate_id") private int id;
     @Column(name="stu_rate_ev") private int stuRateEv;
+    @Column(name="stu_rate_comment") private String comment;
     @Column(name="stu_rid") private int stuRid;
     @Column(name="ev_rid") private int evRid;
     public int getEvRid() {
@@ -29,5 +30,8 @@ public class student_rate {
     public int getStuRid() {
         return stuRid;
     }  
+    public String getComment() {
+        return comment;
+    }
     
 }
