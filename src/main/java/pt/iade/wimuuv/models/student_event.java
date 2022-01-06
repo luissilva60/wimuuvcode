@@ -1,4 +1,5 @@
 package pt.iade.wimuuv.models;
+import java.sql.Time;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -16,10 +17,10 @@ public class student_event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_ev_id") private int id;
     @Column(name="stu_entry_id") private int entryId;
-    @Column(name="stu_ev_entrytime") private Timestamp evEntrytime;
+    @Column(name="stu_ev_entrytime") private Time evEntrytime;
     @Column(name="ev_id") private int evId;
 
-    public Timestamp getEvEntrytime() {
+    public Time getEvEntrytime() {
         return evEntrytime;
     }
     public int getId() {
