@@ -21,5 +21,5 @@ public interface Student_EventRepository extends CrudRepository<student_event, I
     @Query(value="insert into student_rate(stu_entry_id, stu_ev_entrytime, ev_id ) "+
         "values( :#{#student_event.entryId}, :#{#student_event.evEntrytime}, "+
         " :#{#student_event.evId})", nativeQuery=true)
-    Integer registerRate(@Param("student_rate") student_event student_event);
+    Integer registerStudentEvent(@Param("student_rate") student_event student_event);
 }

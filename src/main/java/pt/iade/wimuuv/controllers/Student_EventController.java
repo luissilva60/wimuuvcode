@@ -42,7 +42,7 @@ public class Student_EventController {
     @PostMapping(path = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response saveEvent(@RequestBody student_event student_eventId) {
         logger.info("Registering event with id " + student_eventId.getId());
-        Integer inserted = student_eventRepository.registerEvent(student_eventId);
+        Integer inserted = student_eventRepository.registerStudentEvent(student_eventId);
         return new Response(inserted+" registration created",student_eventId);
     }
 
