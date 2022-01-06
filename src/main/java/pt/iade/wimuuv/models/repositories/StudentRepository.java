@@ -28,7 +28,11 @@ public interface StudentRepository extends CrudRepository<student, Integer>{
     
     
     
-    
+    @Query(value = "select * from event "+
+    "inner join student_event se on event.event_id = se.ev_id " +
+    "where stu_entry_id = :id",
+    nativeQuery = true)
+    Iterable<student> getHistorico(int id);
     
     
     
@@ -49,4 +53,6 @@ public interface StudentRepository extends CrudRepository<student, Integer>{
     nativeQuery = true)
     Iterable<student> ChangePasswordStudent(@Param ("password") String password, 
                                             @Param("id") int id);
+
+                                            
 }

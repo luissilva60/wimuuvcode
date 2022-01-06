@@ -101,6 +101,12 @@ public class StudentController {
         
     
     }
+
+    @GetMapping(path = "/{id:[0-9]+}/historico", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<student> getHistorico(@PathVariable int id) {
+        logger.info("Sending history with stu id: " + id);
+        return studentRepository.getHistorico(id);
+    }
     
 
 }
