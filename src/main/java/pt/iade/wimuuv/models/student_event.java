@@ -28,7 +28,7 @@ public class student_event {
     public int getEntryId() {
         return entryId;
     }
-    public int getEv_id() {
+    public int getEvId() {
         return evId;
     }
     
