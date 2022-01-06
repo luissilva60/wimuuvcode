@@ -18,7 +18,7 @@ public interface Student_EventRepository extends CrudRepository<student_event, I
     Iterable<student_event> gethistorico(int id);
 
     @Modifying @Transactional
-    @Query(value="insert into student_rate(stu_entry_id, stu_ev_entrytime, ev_id ) "+
+    @Query(value="insert into student_event(stu_entry_id, stu_ev_entrytime, ev_id ) "+
         "values( :#{#student_event.entryId}, :#{#student_event.evEntrytime}, "+
         " :#{#student_event.evId})", nativeQuery=true)
     Integer registerStudentEvent(@Param("student_event") student_event student_event);
