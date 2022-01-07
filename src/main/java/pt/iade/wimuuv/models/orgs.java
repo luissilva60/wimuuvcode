@@ -1,5 +1,5 @@
 package pt.iade.wimuuv.models;
-import java.io.ObjectInputStream.GetField;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
