@@ -15,7 +15,7 @@ import pt.iade.wimuuv.models.repositories.SpotRepository;
 
 
 @RestController
-@RequestMapping(path = "/api/spot")
+@RequestMapping(path = "/api/spots")
 public class SpotController {
     private final Logger logger = LoggerFactory.getLogger(SpotRepository.class);
     @Autowired
