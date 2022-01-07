@@ -1,6 +1,6 @@
 package pt.iade.wimuuv.models;
 import java.sql.Time;
-
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,10 +17,10 @@ public class student_event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="stu_ev_id") private int id;
     @Column(name="stu_entry_id") private int entryId;
-    @Column(name="stu_ev_entrytime") private Time evEntrytime;
+    @Column(name="stu_ev_entrytime") private LocalTime evEntrytime;
     @Column(name="ev_id") private int evId;
 
-    public Time getEvEntrytime() {
+    public LocalTime getEvEntrytime() {
         return evEntrytime;
     }
     public int getId() {
