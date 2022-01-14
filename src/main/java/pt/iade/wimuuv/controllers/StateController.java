@@ -1,4 +1,4 @@
-package pt.iade.wimuuv.controllers;
+ package pt.iade.wimuuv.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
